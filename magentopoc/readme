@@ -1,0 +1,27 @@
+Integrating MuleESB with the Magento Online Store
+
+
+Mule ESB can be integrated on cloud based applications like Sales force CRM, Mobile Applications etc. But there are many other applications which are very interesting. So we thought why don’t we use Magento with Mule to create my own online store? Here we go..! We have a connector ready. All we need to do is play with it the way we need.
+Using MuleSoft’s Anypoint™ Platform you can quickly create connectivity to Magento either on-premise or in the cloud. This next generation platform provides a complete set of products to help businesses overcome the challenge of integrating SaaS, mobile, and on-premise systems in a matter of days, not weeks or months.
+How do we use it?
+All we need is a Magento Connector and the standard components of Mule. 
+Use a Magento Cloud Connector to work with Magento in Mule. 
+Test the connection by providing the user login details. Make sure it is successful.
+Once the connection is successful, we can use the connector as a component in our flow.
+More detailed information will be present in Mule Tutorial.
+
+
+Now, let us create an example flow to create a product in Magento and update its Inventory from Mule.  
+
+Demonstration of Mule connector can be found in detail at https://mulesoftpartners.bloomfire.com/posts/772636-magento-connector-tutorial
+•	The first flow is the main flow which contains an HTTP Inbound endpoint configured as http://localhost:8081.
+•	 The main flow refers to a sub flow which consists of a Magento Connector configuration.
+•	 The sub-flow creates a product in Magento store using a unique SKU product id in the Create Product component.  
+•	The store returns a unique ID on the successful creation of product, which intern used as reference to update Inventory in Magento store.
+•	 The Stock item attributes must be specified in the update inventory stock. 
+
+
+
+In a Nutshell, When the HTTP is triggered, the flow will be invoked and the product will be created with a unique id which will then be used for updating the inventory of that product.
+Hence when the Update Inventory Stock Item method is called, the details of the inventory would be updated for that product.
+ 
